@@ -12,6 +12,7 @@ const sendEmailViaBrevoAPI = async (to, subject, htmlContent) => {
     to: [{ email: to }],
     subject: subject,
     htmlContent: htmlContent,
+    tracking: { clicks: false } // Evita que Brevo cambie nuestro link por uno de rastreo que se queda cargando
   };
 
   const response = await fetch(url, {
