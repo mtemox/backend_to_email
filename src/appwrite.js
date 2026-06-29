@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const client = new Client()
-    .setEndpoint(process.env.APPWRITE_ENDPOINT || 'https://cloud.appwrite.io/v1')
+    .setEndpoint('https://nyc.cloud.appwrite.io/v1')
     .setProject(process.env.APPWRITE_PROJECT_ID || '6a3d88c70024b0b40bab')
     .setKey(process.env.APPWRITE_API_KEY);
 

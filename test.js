@@ -1,0 +1,1 @@
+import dotenv from 'dotenv'; dotenv.config(); import { users } from './src/appwrite.js'; import { Query } from 'node-appwrite'; async function test() { try { const list = await users.list([Query.equal("email", ["materchico15@gmail.com"])]); console.log(list); } catch(e) { console.error(e); } } test();

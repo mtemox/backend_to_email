@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { users } from './appwrite.js';
+import { Query } from 'node-appwrite';
 import { sendVerificationEmail, sendPasswordResetEmail } from './mailer.js';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -56,7 +57,7 @@ export const sendPasswordReset = async (req, res) => {
     // 1. Buscar usuario por email en Appwrite
     // El SDK de node permite buscar usuarios
     const userList = await users.list([
-      `equal("email", ["${email}"])`
+      Query.equal("email", [email])
     ]);
 
     if (userList.total === 0) {
